@@ -1,0 +1,18 @@
+<label>Marque : </label><input type='text' #marque /><br>
+<label>Couleur : </label><input type='text' #couleur /><br>
+<label>Puissance : </label><input type='number' #puissance /><br>
+<label>Choix : </label><input type='checkbox' #electrique /><br>
+<button>Ajouter</button>
+<hr>
+<hr>
+<hr>
+<div *ngFor="let car of cars">
+  {{ 'marque : ' + car.marque }}<br>
+  {{ 'couleur : ' + car.couleur }}<br>
+  {{ 'puissance : ' + car.puissance }}<br>
+  {{ car.electrique ? 'electrique' : 'thermique'}}<br>
+  <hr>
+</div>
+<hr>
+<hr>
+<div appDoNothing="test" type='text' [logText]="monText" [autreTexte]="monAutreTexte"></div>

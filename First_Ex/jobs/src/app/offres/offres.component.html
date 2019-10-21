@@ -1,0 +1,51 @@
+<p>
+  offres works!
+</p>
+<p>Nous avons {{ nbOffer }}</p>
+
+<p>Les demandes : </p>
+
+<hr>
+<hr>
+<app-ask></app-ask>
+<hr>
+<hr>
+
+<select>
+  <option value="1">offre 1</option>
+  <option value="2">offre 2</option>
+  <option [selected]="isSelected" value="3">offre 3</option>
+  <option value="4">offre 4</option>
+  <option value="5">offre 5</option>
+  <option value="6">offre 6</option>
+</select>
+<hr>
+<div [hidden]="isHidden" [style.color]="isColor">Augury : False ou true</div>
+<hr>
+<div [ngStyle]="{'color': foreground, 'background': background}">Une autre div s'affiche</div>
+<hr>
+<div [ngClass]="{'txtUppercase': isHidden, 'txtBold': foreground === 'blue'}">texte</div>
+<hr>
+<button (click)="isButtonClick('blue')">Changer en bleu</button>
+<hr>
+<div (click)="onButtonClick()">
+  <button>Clique ici !</button>
+  <!-- ajouter le $event en argument pour pouvoir faire appel a un evenement -->
+  <div (click)="autreButton($event)">
+    <button>Autre click</button>
+  </div>
+</div>
+<hr>
+<textarea (keydown.space)="verify()"></textarea>
+<hr>
+<input #variableLocale />
+<button (click)="info(variableLocale.value)">variable locale</button>
+<button (click)="variableLocale.focus()">Focus</button>
+<hr>
+<input #variableColor />
+<button (click)="changeColor(variableColor.value)">variable locale</button>
+<br>
+<p [style.color]="isColorChange">Je change de couleur</p>
+<hr>
+<h1 *ngIf='isHidden; else autre'>ng Template</h1>
+<ng-template #autre>Affiche ng-template</ng-template>

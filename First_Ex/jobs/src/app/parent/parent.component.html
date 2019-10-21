@@ -1,0 +1,17 @@
+<app-enfant [works]="works" (devoir)="showDevoir($event)" (plainte)="afficheMessageEnfant($event)"></app-enfant>
+<div *ngIf="devoir; else empty">
+  Mon enfant a choisi le devoir : {{ devoir }}
+</div>
+
+<ng-template #empty>
+  Mon enfant n'a pas encore choisi de devoir
+</ng-template>
+<br>
+<br>
+<input #devoirAdd />
+<button (click)="setDevoir(devoirAdd.value)">Ajouter un devoir</button>
+<br>
+<br>
+<div *ngIf="plainte">
+  {{ plainte }}
+</div>

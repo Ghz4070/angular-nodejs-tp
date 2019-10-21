@@ -1,0 +1,16 @@
+<section style="text-align:center">
+  <p>
+    races works!
+  </p>
+  <input #race />
+  <button (click)='addPony(race.value)'>Ajouter</button>
+  <div>
+    <ul *ngIf="races.length > 0; else vide">
+      <li *ngFor="let race of races">{{race}}</li>
+    </ul>
+    <ng-template #vide>
+      <h2>Tableau vide !</h2>
+    </ng-template>
+  </div>
+
+</section>

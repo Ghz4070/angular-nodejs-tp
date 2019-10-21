@@ -1,0 +1,13 @@
+<input #title>
+<input #description>
+<input #location>
+<button (click)="addJob(title.value,description.value,location.value)">envoyer</button>
+<hr>
+<ul>
+  <li *ngFor='let job of jobs'>
+    <p>{{ job.title }}</p>
+    <p>{{ job.description }}</p>
+    <p>{{ job.location }}</p>
+    <hr>
+  </li>
+</ul>
